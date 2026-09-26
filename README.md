@@ -30,21 +30,21 @@ O script lê as fotos locais e sincroniza diretamente com o Supabase Storage.
 
 ## 🚀 Como Publicar na Vercel com Novo Domínio
 
-Você pode conectar um novo projeto na Vercel com outro domínio (ex: `carloshenriquemg.com.br`) seguindo um destes métodos:
+Como este repositório é exclusivo para a landing page, o deploy na Vercel é direto:
 
 ### Opção 1: Pelo Painel Web da Vercel (Recomendado)
 1. Acesse [vercel.com](https://vercel.com) e clique em **"Add New... -> Project"**.
-2. Selecione o repositório no GitHub.
-3. No campo **Root Directory**, clique em **Edit** e selecione a pasta `candidato`.
-4. Deixe o Framework Preset como **"Other"** (é um site estático de alta performance, sem necessidade de build complexo).
-5. Clique em **Deploy**.
-6. Em **Settings -> Domains**, adicione o domínio desejado (ex: `carloshenriquemg.com.br` ou subdomínio).
+2. Selecione o repositório **`candidato-carlos-henrique`**.
+3. Deixe todas as opções como padrão (Root Directory `./` e Framework Preset **"Other"**).
+4. Clique em **Deploy**.
+5. Em **Settings -> Domains**, adicione o domínio desejado (ex: `carloshenriquemg.com.br`).
 
 ### Opção 2: Pelo Terminal (Vercel CLI)
 Dentro da pasta `candidato`, execute:
 ```bash
 npx vercel --prod
 ```
+
 
 ---
 
