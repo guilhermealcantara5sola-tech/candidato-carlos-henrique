@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Henrique | Deputado Estadual - Minas Gerais</title>
+    <meta name="description" content="Portal oficial do Deputado Estadual Carlos Henrique. Acompanhe a agenda por Minas Gerais, atuação na ALMG, projetos de lei e canal de apoiadores.">
+    <meta property="og:title" content="Carlos Henrique | Deputado Estadual - Minas Gerais">
+    <meta property="og:description" content="Trabalho de Resultados por Minas Gerais. Conecte-se com nosso mandato.">
+    <meta property="og:image" content="https://xefvhpunadboqfibbefo.supabase.co/storage/v1/object/public/delivery-media/candidato/candidato.webp">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lexend:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Supabase JS Client CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        republicanos: {
+                            blue: '#0B2545',
+                            lightBlue: '#134074',
+                            accent: '#00A8E8',
+                            gold: '#FFC857',
+                            emerald: '#10B981',
+                            cardBg: '#EEF4F8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Lexend', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, .font-heading { font-family: 'Lexend', sans-serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #0B2545 0%, #134074 60%, #004B87 100%);
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, #FFC857 0%, #E5A93C 100%);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .pulse-soft {
+            animation: pulseSlow 2s infinite;
+        }
+
+        @keyframes pulseSlow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.92; transform: scale(1.02); }
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-amber-400 selection:text-slate-900">
+
+    <!-- Top Navigation Header -->
+    <header class="sticky top-0 z-50 bg-republicanos-blue/95 backdrop-blur-md border-b border-white/10 shadow-lg text-white">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-amber-400 shadow-md shrink-0 bg-slate-800">
+                    <img src="https://xefvhpunadboqfibbefo.supabase.co/storage/v1/object/public/delivery-media/candidato/candidato.webp" 
+                         alt="Carlos Henrique" 
+                         class="w-full h-full object-cover object-top">
+                </div>
+                <div>
+                    <span class="text-base md:text-lg font-extrabold tracking-tight block leading-tight text-white group-hover:text-amber-300 transition">
+                        CARLOS HENRIQUE
+                    </span>
+                    <span class="text-[10px] md:text-xs text-amber-400 font-semibold uppercase tracking-wider block">
+                        Deputado Estadual | MG
+                    </span>
+                </div>
+            </a>
+
+            <!-- Domain Tag & Social Badges -->
+            <div class="hidden md:flex items-center gap-3">
+                <span class="bg-white/10 text-slate-200 text-xs px-3 py-1.5 rounded-full font-mono border border-white/10 flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    carloshenriquemg.com.br
+                </span>
+                <a href="https://www.instagram.com/carloshenrique.mg/" target="_blank" rel="noopener noreferrer" class="p-2 text-slate-200 hover:text-pink-400 transition" title="Instagram Oficial">
+                    <i class="fa-brands fa-instagram text-xl"></i>
+                </a>
+                <a href="https://wa.me/5531999999999?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20equipe%20do%20Deputado%20Carlos%20Henrique!" target="_blank" rel="noopener noreferrer" class="p-2 text-slate-200 hover:text-emerald-400 transition" title="WhatsApp Gabinete">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Action Button -->
+            <a href="#grupo-whatsapp" class="md:hidden bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-3 py-2 rounded-lg flex items-center gap-1.5 shadow-md">
+                <i class="fa-brands fa-whatsapp text-sm"></i> Entrar no Grupo
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white relative overflow-hidden pt-8 pb-12 md:py-16">
+        <!-- Subtle background shapes -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-republicanos-accent/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 -left-20 w-80 h-80 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Hero Left Column: Info & Action -->
+                <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20">
+                        <span class="bg-amber-400 text-republicanos-blue font-bold text-[10px] uppercase px-2 py-0.5 rounded">
+                            Republicanos
+                        </span>
+                        <span class="text-xs text-slate-200 font-medium">Trabalho e Respeito pelos Mineiros</span>
+                    </div>
+
+                    <h1 class="text-3xl md:text-5xl font-black tracking-tight leading-tight text-white">
+                        Trabalho de Resultados por <span class="text-amber-400 underline decoration-amber-400/40">Minas Gerais</span>
+                    </h1>
+
+                    <p class="text-slate-200 text-sm md:text-base max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Bem-vindo ao portal oficial do Deputado Estadual <strong>Carlos Henrique</strong>. Aqui você encontra a agenda de viagens por MG, nossas ações na Assembleia Legislativa, leis aprovadas e os canais diretos para caminhar junto com a gente!
+                    </p>
+
+                    <!-- Main Domain Highlight Banner -->
+                    <div class="bg-white/10 backdrop-blur-md p-3 md:p-4 rounded-2xl border border-white/20 max-w-xl mx-auto lg:mx-0 flex flex-col sm:flex-row items-center justify-between gap-3">
+                        <div class="flex items-center gap-3 text-left">
+                            <div class="w-10 h-10 rounded-xl bg-amber-400 text-republicanos-blue flex items-center justify-center text-xl font-bold shrink-0 shadow">
+                                <i class="fa-solid fa-link"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] text-amber-200 uppercase font-semibold">Canal Único de Comunicação</p>
+                                <p class="text-base font-mono font-bold text-white tracking-tight">carloshenriquemg.com.br</p>
+                            </div>
+                        </div>
+                        <button onclick="copyDomainLink()" class="w-full sm:w-auto bg-white/20 hover:bg-white/30 text-white text-xs font-semibold px-4 py-2 rounded-xl border border-white/30 transition flex items-center justify-center gap-1.5 shrink-0 cursor-pointer">
+                            <i class="fa-solid fa-copy text-amber-300"></i> <span id="copyBtnText">Copiar Link</span>
+                        </button>
+                    </div>
+
+                    <!-- Quick Action CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2">
+                        <a href="#grupo-whatsapp" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold px-6 py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 pulse-soft">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Entrar no Grupo VIP do WhatsApp</span>
+                        </a>
+                        <a href="#agenda" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl border border-white/20 transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calendar-days text-amber-300"></i>
+                            <span>Ver Agenda de Visitas</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Column: Candidate Card Display with Supabase Photo -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="w-full max-w-sm bg-slate-900/85 backdrop-blur-xl rounded-3xl p-5 border border-white/20 shadow-2xl relative">
+                        <!-- Card Badge -->
+                        <div class="absolute -top-3 -right-3 bg-amber-400 text-republicanos-blue text-xs font-black uppercase px-3.5 py-1.5 rounded-full shadow-lg border border-white z-20">
+                            Líder da Maioria ALMG
+                        </div>
+
+                        <!-- Candidate Real Photo Display (Supabase Storage) -->
+                        <div class="relative w-full aspect-[4/4.6] rounded-2xl overflow-hidden bg-slate-800 border border-white/15 mb-4 group shadow-inner">
+                            <img src="https://xefvhpunadboqfibbefo.supabase.co/storage/v1/object/public/delivery-media/candidato/candidato.webp" 
+                                 alt="Deputado Estadual Carlos Henrique" 
+                                 class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105">
+                            
+                            <!-- Sleek Gradient Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/20 to-transparent pointer-events-none"></div>
+                            
+                            <div class="absolute bottom-3.5 left-4 right-4 text-left z-10">
+                                <h3 class="text-xl font-black text-white leading-tight">CARLOS HENRIQUE</h3>
+                                <p class="text-xs text-amber-400 font-bold mt-0.5">Deputado Estadual de Resultados</p>
+                                <p class="text-[11px] text-slate-300 font-mono">@carloshenrique.mg</p>
+                            </div>
+                        </div>
+
+                        <!-- Stats Strip -->
+                        <div class="grid grid-cols-3 gap-2 text-center bg-white/5 p-3 rounded-xl border border-white/10 text-xs">
+                            <div>
+                                <span class="block text-amber-400 font-black text-base">4º</span>
+                                <span class="text-[10px] text-slate-300">Mandato ALMG</span>
+                            </div>
+                            <div class="border-x border-white/10">
+                                <span class="block text-amber-400 font-black text-base">853</span>
+                                <span class="text-[10px] text-slate-300">Municípios MG</span>
+                            </div>
+                            <div>
+                                <span class="block text-amber-400 font-black text-base">+100k</span>
+                                <span class="text-[10px] text-slate-300">Apoiadores</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Links Rápidos / Canais Oficiais -->
+    <section id="links-rapidos" class="py-10 max-w-6xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-8 space-y-2">
+            <span class="text-xs font-bold text-republicanos-lightBlue uppercase tracking-wider bg-blue-100 px-3 py-1 rounded-full">
+                Conecte-se com Carlos Henrique
+            </span>
+            <h2 class="text-2xl md:text-3xl font-black text-slate-900">
+                Acesse Nossos Canais Oficiais
+            </h2>
+            <p class="text-slate-600 text-sm">
+                Escolha a rede social de sua preferência e acompanhe as novidades do nosso mandato diariamente.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            <!-- Link 1: WhatsApp Group -->
+            <a href="https://chat.whatsapp.com/exemplo" target="_blank" rel="noopener noreferrer" id="grupo-whatsapp" class="bg-emerald-600 hover:bg-emerald-700 text-white p-5 rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col justify-between group">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl text-white">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <span class="bg-emerald-500 text-[10px] font-bold uppercase px-2 py-0.5 rounded text-white">Entrar Agora</span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-base text-white">Grupo VIP WhatsApp</h3>
+                    <p class="text-xs text-emerald-100 mt-1">Receba informativos das visitas, leis e projetos em primeira mão.</p>
+                </div>
+                <div class="mt-4 flex items-center text-xs font-bold text-white group-hover:underline">
+                    Participar da Comunidade <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
+                </div>
+            </a>
+
+            <!-- Link 2: Instagram -->
+            <a href="https://www.instagram.com/carloshenrique.mg/" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-tr from-amber-500 via-rose-600 to-purple-600 text-white p-5 rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col justify-between group">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl text-white">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <span class="bg-white/20 text-[10px] font-bold uppercase px-2 py-0.5 rounded text-white">@carloshenrique.mg</span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-base text-white">Instagram Oficial</h3>
+                    <p class="text-xs text-pink-100 mt-1">Fotos das caminhadas, bastidores da ALMG e vídeos diários.</p>
+                </div>
+                <div class="mt-4 flex items-center text-xs font-bold text-white group-hover:underline">
+                    Seguir no Instagram <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
+                </div>
+            </a>
+
+            <!-- Link 3: YouTube -->
+            <a href="https://www.youtube.com/@carloshenrique.mg" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white p-5 rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col justify-between group">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl text-white">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                    <span class="bg-white/20 text-[10px] font-bold uppercase px-2 py-0.5 rounded text-white">Vídeos</span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-base text-white">Canal no YouTube</h3>
+                    <p class="text-xs text-red-100 mt-1">Pronunciamentos na ALMG, entrevistas e programas completos.</p>
+                </div>
+                <div class="mt-4 flex items-center text-xs font-bold text-white group-hover:underline">
+                    Inscrever-se no Canal <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
+                </div>
+            </a>
+
+            <!-- Link 4: Fale com o Gabinete -->
+            <a href="https://wa.me/553121085788?text=Ol%C3%A1%2C%20gostaria%20de%20deixar%20uma%20mensagem%20para%20o%20Deputado%20Carlos%20Henrique!" target="_blank" rel="noopener noreferrer" class="bg-republicanos-blue hover:bg-republicanos-lightBlue text-white p-5 rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col justify-between group">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl text-amber-300">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <span class="bg-amber-400 text-republicanos-blue text-[10px] font-bold uppercase px-2 py-0.5 rounded">Gabinete</span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-base text-white">Atendimento ao Cidadão</h3>
+                    <p class="text-xs text-slate-300 mt-1">Envie sua demanda, pedido de visita ou sugestão de projeto.</p>
+                </div>
+                <div class="mt-4 flex items-center text-xs font-bold text-amber-300 group-hover:underline">
+                    Mandar Mensagem <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Agenda de Visitas Section -->
+    <section id="agenda" class="py-12 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-4">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div>
+                    <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase">
+                        Próximos Compromissos
+                    </span>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 mt-2">
+                        Agenda de Visitas por Minas Gerais
+                    </h2>
+                    <p class="text-slate-600 text-sm">
+                        Saiba onde o Deputado Carlos Henrique estará nos próximos dias e venha nos acompanhar!
+                    </p>
+                </div>
+
+                <!-- Region Filter Tabs -->
+                <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                    <button onclick="filterAgenda('todas')" class="agenda-filter-btn active bg-republicanos-blue text-white px-3.5 py-2 rounded-lg transition cursor-pointer" data-region="todas">Todas</button>
+                    <button onclick="filterAgenda('jequitinhonha')" class="agenda-filter-btn bg-white hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-lg transition cursor-pointer" data-region="jequitinhonha">Vale do Jequitinhonha / Mucuri</button>
+                    <button onclick="filterAgenda('bh')" class="agenda-filter-btn bg-white hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-lg transition cursor-pointer" data-region="bh">Belo Horizonte / RBMH</button>
+                    <button onclick="filterAgenda('outras')" class="agenda-filter-btn bg-white hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-lg transition cursor-pointer" data-region="outras">Demais Regiões</button>
+                </div>
+            </div>
+
+            <!-- Agenda Cards Grid -->
+            <div id="agendaContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Event 1 -->
+                <div class="agenda-item bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition space-y-4" data-region="jequitinhonha">
+                    <div class="flex justify-between items-start">
+                        <span class="bg-red-500 text-white font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">
+                            HOJE
+                        </span>
+                        <span class="text-xs font-bold text-slate-400">
+                            <i class="fa-regular fa-clock mr-1"></i> 18:30
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="font-black text-lg text-slate-900">Encontro com Lideranças & Caminhada</h3>
+                        <p class="text-xs text-republicanos-lightBlue font-semibold mt-1">
+                            <i class="fa-solid fa-location-dot text-red-500 mr-1"></i> Teófilo Otoni - MG
+                        </p>
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Reunião com apoiadores regionais, produtores rurais e visita às obras de pavimentação do município.
+                    </p>
+                    <div class="pt-2 border-t border-slate-100 flex justify-between items-center text-xs">
+                        <span class="text-slate-500 text-[11px]"><i class="fa-solid fa-users text-blue-500 mr-1"></i> Aberto ao Público</span>
+                        <a href="https://wa.me/5531999999999?text=Quero%20confirmar%20presen%C3%A7a%20no%20evento%20em%20Te%C3%B3filo%20Otoni" target="_blank" class="text-republicanos-lightBlue font-bold hover:underline">
+                            Confirmar Presença &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="agenda-item bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition space-y-4" data-region="bh">
+                    <div class="flex justify-between items-start">
+                        <span class="bg-amber-500 text-white font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">
+                            AMANHÃ
+                        </span>
+                        <span class="text-xs font-bold text-slate-400">
+                            <i class="fa-regular fa-clock mr-1"></i> 09:00
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="font-black text-lg text-slate-900">Sessão e Atividades na ALMG</h3>
+                        <p class="text-xs text-republicanos-lightBlue font-semibold mt-1">
+                            <i class="fa-solid fa-location-dot text-red-500 mr-1"></i> Assembleia Legislativa - Belo Horizonte
+                        </p>
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Votação de projetos de incentivo ao agronegócio e reunião da Comissão de Redação da ALMG.
+                    </p>
+                    <div class="pt-2 border-t border-slate-100 flex justify-between items-center text-xs">
+                        <span class="text-slate-500 text-[11px]"><i class="fa-solid fa-tv text-amber-500 mr-1"></i> Transmissão TV ALMG</span>
+                        <a href="https://www.almg.gov.br" target="_blank" rel="noopener noreferrer" class="text-republicanos-lightBlue font-bold hover:underline">
+                            Acompanhar Ao Vivo &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="agenda-item bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition space-y-4" data-region="jequitinhonha">
+                    <div class="flex justify-between items-start">
+                        <span class="bg-blue-600 text-white font-extrabold text-[10px] uppercase px-2.5 py-1 rounded-md">
+                            SEXTA-FEIRA
+                        </span>
+                        <span class="text-xs font-bold text-slate-400">
+                            <i class="fa-regular fa-clock mr-1"></i> 15:00
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="font-black text-lg text-slate-900">Entrega de Equipamentos & Agricultura</h3>
+                        <p class="text-xs text-republicanos-lightBlue font-semibold mt-1">
+                            <i class="fa-solid fa-location-dot text-red-500 mr-1"></i> Almenara - MG
+                        </p>
+                    </div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Anúncio de investimentos para agricultura familiar e fortalecimento da EMATER na região.
+                    </p>
+                    <div class="pt-2 border-t border-slate-100 flex justify-between items-center text-xs">
+                        <span class="text-slate-500 text-[11px]"><i class="fa-solid fa-tractor text-emerald-500 mr-1"></i> Ação Comunitária</span>
+                        <a href="https://wa.me/5531999999999?text=Mais%20informa%C3%A7%C3%B5es%20sobre%20o%20evento%20em%20Almenara" target="_blank" class="text-republicanos-lightBlue font-bold hover:underline">
+                            Mais Detalhes &rarr;
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ações e Conquistas Section -->
+    <section id="acoes" class="py-12 max-w-6xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase">
+                Atualizações do Instagram (@carloshenrique.mg)
+            </span>
+            <h2 class="text-2xl md:text-3xl font-black text-slate-900">
+                O Que Carlos Henrique Está Fazendo por MG
+            </h2>
+            <p class="text-slate-600 text-sm">
+                Confira os destaques recentes do trabalho legislativo, ações de campo e conquistas para o estado.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Feed Item 1 -->
+            <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition flex flex-col justify-between">
+                <div>
+                    <div class="bg-slate-900 h-52 relative flex items-center justify-center text-white overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent z-10"></div>
+                        <i class="fa-solid fa-church text-6xl text-amber-400 opacity-25 group-hover:scale-110 transition duration-500"></i>
+                        <div class="absolute bottom-4 left-4 right-4 z-20">
+                            <span class="bg-emerald-500 text-white font-bold text-[10px] uppercase px-2 py-0.5 rounded">
+                                Lei Sancionada
+                            </span>
+                            <h3 class="text-white font-black text-base mt-1 leading-snug">
+                                Defesa dos Valores Cristãos e Liberdade Religiosa
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Autoria da <strong>Lei nº 24.994/2024</strong>, que determina que as atividades religiosas sejam consideradas serviços essenciais em situações de emergência e calamidade pública em Minas Gerais.
+                        </p>
+                    </div>
+                </div>
+                <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-slate-100 text-xs">
+                    <span class="text-slate-400"><i class="fa-regular fa-calendar mr-1"></i> MG Sancionado</span>
+                    <a href="https://www.instagram.com/carloshenrique.mg/" target="_blank" rel="noopener noreferrer" class="text-republicanos-lightBlue font-bold hover:underline">Ver no Instagram &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Feed Item 2 -->
+            <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition flex flex-col justify-between">
+                <div>
+                    <div class="bg-slate-900 h-52 relative flex items-center justify-center text-white overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent z-10"></div>
+                        <i class="fa-solid fa-wheat-awn text-6xl text-amber-400 opacity-25 group-hover:scale-110 transition duration-500"></i>
+                        <div class="absolute bottom-4 left-4 right-4 z-20">
+                            <span class="bg-amber-500 text-white font-bold text-[10px] uppercase px-2 py-0.5 rounded">
+                                Desenvolvimento Rural
+                            </span>
+                            <h3 class="text-white font-black text-base mt-1 leading-snug">
+                                Fortalecimento da EMATER e Agricultura Familiar
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Atuação firme na ALMG destina emendas para a assistência técnica no campo, garantindo tratores, poços artesianos e insumos aos pequenos produtores rurais.
+                        </p>
+                    </div>
+                </div>
+                <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-slate-100 text-xs">
+                    <span class="text-slate-400"><i class="fa-regular fa-calendar mr-1"></i> Vale do Jequitinhonha</span>
+                    <a href="https://www.instagram.com/carloshenrique.mg/" target="_blank" rel="noopener noreferrer" class="text-republicanos-lightBlue font-bold hover:underline">Ver no Instagram &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Feed Item 3 -->
+            <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition flex flex-col justify-between">
+                <div>
+                    <div class="bg-slate-900 h-52 relative flex items-center justify-center text-white overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent z-10"></div>
+                        <i class="fa-solid fa-futbol text-6xl text-amber-400 opacity-25 group-hover:scale-110 transition duration-500"></i>
+                        <div class="absolute bottom-4 left-4 right-4 z-20">
+                            <span class="bg-blue-600 text-white font-bold text-[10px] uppercase px-2 py-0.5 rounded">
+                                Esporte e Cidadania
+                            </span>
+                            <h3 class="text-white font-black text-base mt-1 leading-snug">
+                                Projetos de Esporte para Jovens Mineiros
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Como ex-Secretário de Estado de Esportes, Carlos Henrique continua incentivando escolinhas de futebol, quadras poliesportivas e inclusão social através do esporte nas periferias e interior.
+                        </p>
+                    </div>
+                </div>
+                <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-slate-100 text-xs">
+                    <span class="text-slate-400"><i class="fa-regular fa-calendar mr-1"></i> Todo o Estado</span>
+                    <a href="https://www.instagram.com/carloshenrique.mg/" target="_blank" rel="noopener noreferrer" class="text-republicanos-lightBlue font-bold hover:underline">Ver no Instagram &rarr;</a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Biografia Section -->
+    <section id="biografia" class="py-12 bg-republicanos-blue text-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="bg-white/10 p-6 rounded-3xl border border-white/20 text-center space-y-4 max-w-sm w-full shadow-2xl backdrop-blur-md">
+                        <div class="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-amber-400 shadow-2xl relative bg-slate-800">
+                            <img src="https://xefvhpunadboqfibbefo.supabase.co/storage/v1/object/public/delivery-media/candidato/candidato.webp" 
+                                 alt="Carlos Henrique - Deputado Estadual" 
+                                 class="w-full h-full object-cover object-top">
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-black text-white">Carlos Henrique</h3>
+                            <p class="text-amber-300 font-bold text-xs uppercase tracking-wider">Deputado Estadual | Republicanos MG</p>
+                        </div>
+                        <p class="text-slate-300 text-xs leading-relaxed italic">
+                            "Política se faz com coragem, valores cristãos e compromisso real com a vida de cada mineiro."
+                        </p>
+                        
+                        <div class="pt-2 border-t border-white/10 flex justify-center gap-4 text-slate-300 text-sm">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-amber-400"></i> Ex-Vereador BH</span>
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-amber-400"></i> Ex-Sec. Esportes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+                    <span class="bg-amber-400 text-republicanos-blue text-xs font-black px-3 py-1 rounded-full uppercase">
+                        Biografia e Trajetória
+                    </span>
+                    <h2 class="text-2xl md:text-4xl font-black text-white leading-tight">
+                        Uma Vida Dedicada ao Trabalho e ao Serviço Público
+                    </h2>
+
+                    <div class="space-y-3 text-slate-200 text-sm leading-relaxed">
+                        <p>
+                            Carlos Henrique iniciou sua jornada pública como vereador em Belo Horizonte, exercendo três mandatos destacados. Pela sua competência e liderança, foi eleito Deputado Estadual por Minas Gerais, estando atualmente em seu <strong>4º mandato consecutivo na Assembleia Legislativa (ALMG)</strong>.
+                        </p>
+                        <p>
+                            Foi <strong>Secretário de Estado de Esportes de Minas Gerais</strong>, 2º Secretário da Mesa Diretora e atualmente exerce o papel de <strong>Líder da Maioria na ALMG</strong> e Secretário-Geral do Republicanos em Minas.
+                        </p>
+                        <p>
+                            Sua atuação traz como pilares fundamentais a <strong>defesa da família, a liberdade religiosa, o investimento no Vale do Jequitinhonha, Mucuri e Norte de Minas</strong>, além do fortalecimento da agricultura familiar e segurança pública.
+                        </p>
+                    </div>
+
+                    <!-- City Citations / Honors Badges -->
+                    <div class="pt-3">
+                        <p class="text-xs font-bold text-amber-300 uppercase tracking-wider mb-2">Reconhecimento e Cidadania Honorária em mais de 20 Cidades:</p>
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-1.5 text-[11px] text-slate-300">
+                            <span class="bg-white/10 px-2.5 py-1 rounded-md">Teófilo Otoni</span>
+                            <span class="bg-white/10 px-2.5 py-1 rounded-md">Ibirité</span>
+                            <span class="bg-white/10 px-2.5 py-1 rounded-md">Santa Luzia</span>
+                            <span class="bg-white/10 px-2.5 py-1 rounded-md">Pedra Azul</span>
+                            <span class="bg-white/10 px-2.5 py-1 rounded-md">Uberlândia</span>
+                            <span class="bg-white/10 px-2.5 py-1 rounded-md">Contagem</span>
+                            <span class="bg-white/10 px-2.5 py-1 rounded-md">Almenara</span>
+                            <span class="bg-white/10 px-2.5 py-1 rounded-md">Sete Lagoas</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Materiais Oficiais de Campanha -->
+    <section id="materiais" class="py-12 max-w-6xl mx-auto px-4">
+        <div class="bg-slate-900 text-white rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+            <div class="max-w-3xl mb-8 space-y-2">
+                <span class="bg-amber-400 text-republicanos-blue text-xs font-bold px-3 py-1 rounded-full uppercase">
+                    Central do Apoiador
+                </span>
+                <h2 class="text-2xl md:text-3xl font-black text-white">
+                    Baixe Materiais Oficiais de Campanha
+                </h2>
+                <p class="text-slate-400 text-sm">
+                    Ajude a espalhar a nossa mensagem! Baixe o santinho digital, artes para redes sociais e figurinhas do WhatsApp.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                
+                <!-- Download Item 1 -->
+                <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-red-500/20 text-red-400 rounded-xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Informativo Digital PDF</h4>
+                            <p class="text-[11px] text-slate-400">Prestação de Contas</p>
+                        </div>
+                    </div>
+                    <button onclick="downloadMock('Informativo Digital PDF')" class="bg-amber-400 hover:bg-amber-500 text-republicanos-blue p-2.5 rounded-xl text-xs font-bold transition cursor-pointer">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                </div>
+
+                <!-- Download Item 2 -->
+                <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-pink-500/20 text-pink-400 rounded-xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-image"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Artes para Status & Stories</h4>
+                            <p class="text-[11px] text-slate-400">Pacote em Alta Qualidade</p>
+                        </div>
+                    </div>
+                    <button onclick="downloadMock('Pacote de Artes')" class="bg-amber-400 hover:bg-amber-500 text-republicanos-blue p-2.5 rounded-xl text-xs font-bold transition cursor-pointer">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                </div>
+
+                <!-- Download Item 3 -->
+                <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center text-xl">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Stickers / Figurinhas</h4>
+                            <p class="text-[11px] text-slate-400">Para Grupos do WhatsApp</p>
+                        </div>
+                    </div>
+                    <button onclick="downloadMock('Figurinhas do WhatsApp')" class="bg-amber-400 hover:bg-amber-500 text-republicanos-blue p-2.5 rounded-xl text-xs font-bold transition cursor-pointer">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Cadastro de Voluntário / Apoiador Section -->
+    <section id="voluntario" class="py-12 max-w-6xl mx-auto px-4">
+        <div class="bg-white rounded-3xl p-6 md:p-10 border border-slate-200 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-5 space-y-4">
+                <span class="bg-blue-100 text-republicanos-lightBlue text-xs font-bold px-3 py-1 rounded-full uppercase">
+                    Caminhe Conosco
+                </span>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900">
+                    Seja um Apoiador e Voluntário na Sua Cidade
+                </h2>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    A verdadeira mudança acontece quando nos unimos por valores sólidos. Preencha os campos ao lado e receba materiais físicos ou digitais da campanha diretamente no seu WhatsApp!
+                </p>
+                
+                <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                    <div class="flex items-center gap-2 text-xs font-bold text-slate-800">
+                        <i class="fa-solid fa-shield-halved text-emerald-600"></i> Seus dados estão seguros
+                    </div>
+                    <p class="text-[11px] text-slate-500">
+                        Utilizaremos suas informações exclusivamente para comunicações oficiais do mandato e envio de informativos de campanha.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Form with Supabase Integration -->
+            <div class="lg:col-span-7">
+                <form id="volunteerForm" onsubmit="handleVolunteerSubmit(event)" class="space-y-4 bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Nome Completo *</label>
+                            <input type="text" id="formNome" required placeholder="Seu nome completo" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-republicanos-lightBlue focus:outline-none bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">WhatsApp com DDD *</label>
+                            <input type="tel" id="formWhatsApp" required placeholder="(31) 99999-9999" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-republicanos-lightBlue focus:outline-none bg-white">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Sua Cidade em MG *</label>
+                            <input type="text" id="formCidade" required placeholder="Ex: Belo Horizonte, Teófilo Otoni..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-republicanos-lightBlue focus:outline-none bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Como deseja apoiar?</label>
+                            <select id="formApoio" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-republicanos-lightBlue focus:outline-none bg-white">
+                                <option value="noticias_whatsapp">Quero receber notícias no WhatsApp</option>
+                                <option value="voluntario_cidade">Quero ser voluntário / divulgar na minha cidade</option>
+                                <option value="lideranca">Sou liderança comunitária / religiosa / rural</option>
+                                <option value="agendar_visita">Quero agendar uma visita do Deputado</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Mensagem ou Sugestão (Opcional)</label>
+                        <textarea id="formMensagem" rows="3" placeholder="Deixe uma mensagem para a equipe do Deputado..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-republicanos-lightBlue focus:outline-none bg-white"></textarea>
+                    </div>
+
+                    <button type="submit" id="btnSubmitForm" class="w-full bg-republicanos-blue hover:bg-republicanos-lightBlue text-white font-extrabold py-3.5 rounded-xl shadow-md transition flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-paper-plane text-amber-400"></i> <span id="btnSubmitText">Enviar Cadastro de Apoiador</span>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal de Notificação & Confirmação -->
+    <div id="modalNotification" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center space-y-4 shadow-2xl border border-slate-100 animate-in fade-in zoom-in duration-200">
+            <div id="modalIcon" class="w-16 h-16 mx-auto rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div>
+                <h3 id="modalTitle" class="text-lg font-black text-slate-900">Sucesso!</h3>
+                <p id="modalMessage" class="text-xs text-slate-600 mt-1">Sua mensagem foi enviada com sucesso.</p>
+            </div>
+            <div id="modalActionContainer" class="space-y-2">
+                <button onclick="closeModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition cursor-pointer">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-republicanos-blue text-slate-300 py-10 border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-4 space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-white/10">
+                <div class="text-center md:text-left flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-amber-400 shrink-0 bg-slate-800">
+                        <img src="https://xefvhpunadboqfibbefo.supabase.co/storage/v1/object/public/delivery-media/candidato/candidato.webp" 
+                             alt="Carlos Henrique" 
+                             class="w-full h-full object-cover object-top">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-black text-white">CARLOS HENRIQUE</h3>
+                        <p class="text-xs text-amber-400 font-semibold">Deputado Estadual — Republicanos MG</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 text-xl">
+                    <a href="https://www.instagram.com/carloshenrique.mg/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-amber-400 hover:text-republicanos-blue flex items-center justify-center transition" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/5531999999999" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-emerald-500 hover:text-white flex items-center justify-center transition" title="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@carloshenrique.mg" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-red-600 hover:text-white flex items-center justify-center transition" title="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <p>
+                    &copy; 2026 Mandato Deputado Estadual Carlos Henrique. Domínio oficial: <span class="text-amber-400 font-mono">carloshenriquemg.com.br</span>
+                </p>
+                <p class="text-center md:text-right">
+                    Desenvolvimento e Estratégia Digital: <strong class="text-slate-200">Guilherme Alcantara Ferreira</strong>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Logic -->
+    <script>
+        // Supabase Client Initialization (Usando as credenciais já conectadas)
+        const SUPABASE_URL = 'https://xefvhpunadboqfibbefo.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_jMT1I0AlK7UfHlP1mquu9g_btqHeum_';
+        
+        let supabaseClient = null;
+        try {
+            if (window.supabase) {
+                supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            }
+        } catch (e) {
+            console.warn('Supabase não inicializado:', e);
+        }
+
+        // Copy link logic for single link strategy
+        function copyDomainLink() {
+            const domain = 'carloshenriquemg.com.br';
+            
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(domain).then(showCopied).catch(fallbackCopy);
+            } else {
+                fallbackCopy();
+            }
+
+            function fallbackCopy() {
+                const tempInput = document.createElement('input');
+                tempInput.value = domain;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                showCopied();
+            }
+
+            function showCopied() {
+                const copyBtnText = document.getElementById('copyBtnText');
+                if (copyBtnText) {
+                    copyBtnText.innerText = 'Copiado com Sucesso!';
+                    setTimeout(() => {
+                        copyBtnText.innerText = 'Copiar Link';
+                    }, 2500);
+                }
+            }
+        }
+
+        // Agenda Filter logic
+        function filterAgenda(region) {
+            const items = document.querySelectorAll('.agenda-item');
+            const buttons = document.querySelectorAll('.agenda-filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-region') === region) {
+                    btn.classList.add('bg-republicanos-blue', 'text-white');
+                    btn.classList.remove('bg-white', 'text-slate-700');
+                } else {
+                    btn.classList.remove('bg-republicanos-blue', 'text-white');
+                    btn.classList.add('bg-white', 'text-slate-700');
+                }
+            });
+
+            items.forEach(item => {
+                if (region === 'todas' || item.getAttribute('data-region') === region) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Handle Volunteer Form Submission (Supabase + WhatsApp Fallback)
+        async function handleVolunteerSubmit(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('btnSubmitForm');
+            const btnText = document.getElementById('btnSubmitText');
+            const originalText = btnText.innerText;
+            
+            const nome = document.getElementById('formNome').value.trim();
+            const whatsapp = document.getElementById('formWhatsApp').value.trim();
+            const cidade = document.getElementById('formCidade').value.trim();
+            const apoioSelect = document.getElementById('formApoio');
+            const apoioTexto = apoioSelect.options[apoioSelect.selectedIndex].text;
+            const mensagem = document.getElementById('formMensagem').value.trim();
+
+            btn.disabled = true;
+            btnText.innerText = 'Cadastrando...';
+
+            try {
+                // Tenta salvar no Supabase se o cliente estiver ativo
+                if (supabaseClient) {
+                    const { error } = await supabaseClient
+                        .from('candidato_leads')
+                        .insert([
+                            {
+                                nome: nome,
+                                whatsapp: whatsapp,
+                                cidade: cidade,
+                                tipo_apoio: apoioTexto,
+                                mensagem: mensagem || null
+                            }
+                        ]);
+                    if (error) {
+                        console.warn('Aviso ao gravar no Supabase (se a tabela ainda não existir, continue normalmente):', error.message);
+                    }
+                }
+            } catch (err) {
+                console.warn('Erro ao conectar ao Supabase:', err);
+            } finally {
+                btn.disabled = false;
+                btnText.innerText = originalText;
+            }
+
+            // Exibir modal de sucesso com atalho opcional para o WhatsApp do Gabinete
+            const zapTexto = encodeURIComponent(`Olá Deputado Carlos Henrique! Acabei de me cadastrar no portal oficial:\n\n*Nome:* ${nome}\n*Cidade:* ${cidade}\n*Apoio:* ${apoioTexto}` + (mensagem ? `\n*Mensagem:* ${mensagem}` : ''));
+            const zapUrl = `https://wa.me/5531999999999?text=${zapTexto}`;
+
+            showModal(
+                'Cadastro Realizado!',
+                `Obrigado por se juntar à nossa caminhada por Minas Gerais, ${nome}! Sua mensagem foi registrada. Deseja também confirmar diretamente no WhatsApp da nossa equipe?`,
+                'check',
+                'emerald',
+                zapUrl
+            );
+
+            document.getElementById('volunteerForm').reset();
+        }
+
+        // Download Mock Notification
+        function downloadMock(item) {
+            showModal(
+                'Download Iniciado',
+                'O arquivo "' + item + '" foi preparado e enviado para download!',
+                'download',
+                'amber'
+            );
+        }
+
+        // Modal Helpers
+        function showModal(title, message, iconType, color, actionUrl = null) {
+            const modal = document.getElementById('modalNotification');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalMessage = document.getElementById('modalMessage');
+            const modalIcon = document.getElementById('modalIcon');
+            const actionContainer = document.getElementById('modalActionContainer');
+
+            modalTitle.innerText = title;
+            modalMessage.innerText = message;
+
+            if (iconType === 'download') {
+                modalIcon.innerHTML = '<i class="fa-solid fa-file-arrow-down"></i>';
+                modalIcon.className = 'w-16 h-16 mx-auto rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-3xl';
+            } else {
+                modalIcon.innerHTML = '<i class="fa-solid fa-check"></i>';
+                modalIcon.className = 'w-16 h-16 mx-auto rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl';
+            }
+
+            if (actionUrl) {
+                actionContainer.innerHTML = `
+                    <a href="${actionUrl}" target="_blank" onclick="closeModal()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition flex items-center justify-center gap-1.5 shadow">
+                        <i class="fa-brands fa-whatsapp text-sm"></i> Confirmar no WhatsApp
+                    </a>
+                    <button onclick="closeModal()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-2 rounded-xl text-xs transition cursor-pointer">
+                        Concluir
+                    </button>
+                `;
+            } else {
+                actionContainer.innerHTML = `
+                    <button onclick="closeModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition cursor-pointer">
+                        Fechar
+                    </button>
+                `;
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modalNotification').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "candidato-carlos-henrique-landing-page",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Landing page oficial Deputado Estadual Carlos Henrique",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve .",
+    "upload:assets": "node upload_to_supabase.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.116.0"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
