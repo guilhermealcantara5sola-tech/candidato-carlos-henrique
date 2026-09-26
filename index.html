@@ -118,23 +118,65 @@
             </div>
 
             <!-- Mobile Action Button -->
-            <a href="#grupo-whatsapp" class="md:hidden bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-3 py-2 rounded-lg flex items-center gap-1.5 shadow-md">
-                <i class="fa-brands fa-whatsapp text-sm"></i> Entrar no Grupo
+            <a href="https://wa.me/5531999999999?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20equipe%20do%20Deputado%20Carlos%20Henrique!" target="_blank" rel="noopener noreferrer" class="md:hidden bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-3 py-2 rounded-lg flex items-center gap-1.5 shadow-md">
+                <i class="fa-brands fa-whatsapp text-sm"></i> Fale Conosco
             </a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-gradient text-white relative overflow-hidden pt-8 pb-12 md:py-16">
+    <section class="hero-gradient text-white relative overflow-hidden pt-6 pb-12 md:py-16">
         <!-- Subtle background shapes -->
         <div class="absolute -top-24 -right-24 w-96 h-96 bg-republicanos-accent/20 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute bottom-0 -left-20 w-80 h-80 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
 
         <div class="max-w-6xl mx-auto px-4 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
+                <!-- Hero Photo Column: Candidate Card Display with Supabase Photo (Elevado e Primeiro no Mobile) -->
+                <div class="order-1 lg:order-2 lg:col-span-5 flex justify-center w-full">
+                    <div class="w-full max-w-sm bg-slate-900/90 backdrop-blur-xl rounded-3xl p-5 border border-white/20 shadow-2xl relative lg:-mt-2">
+                        <!-- Card Badge -->
+                        <div class="absolute -top-3 -right-3 bg-amber-400 text-republicanos-blue text-xs font-black uppercase px-3.5 py-1.5 rounded-full shadow-lg border border-white z-20">
+                            Líder da Maioria ALMG
+                        </div>
+
+                        <!-- Candidate Real Photo Display (Supabase Storage) -->
+                        <div class="relative w-full aspect-[4/4.5] rounded-2xl overflow-hidden bg-slate-800 border border-white/15 mb-4 group shadow-inner">
+                            <img src="https://xefvhpunadboqfibbefo.supabase.co/storage/v1/object/public/delivery-media/candidato/candidato.webp" 
+                                 alt="Deputado Estadual Carlos Henrique" 
+                                 class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105">
+                            
+                            <!-- Sleek Gradient Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/20 to-transparent pointer-events-none"></div>
+                            
+                            <div class="absolute bottom-3.5 left-4 right-4 text-left z-10">
+                                <h3 class="text-xl font-black text-white leading-tight">CARLOS HENRIQUE</h3>
+                                <p class="text-xs text-amber-400 font-bold mt-0.5">Deputado Estadual de Resultados</p>
+                                <p class="text-[11px] text-slate-300 font-mono">@carloshenrique.mg</p>
+                            </div>
+                        </div>
+
+                        <!-- Stats Strip -->
+                        <div class="grid grid-cols-3 gap-2 text-center bg-white/5 p-3 rounded-xl border border-white/10 text-xs">
+                            <div>
+                                <span class="block text-amber-400 font-black text-base">4º</span>
+                                <span class="text-[10px] text-slate-300">Mandato ALMG</span>
+                            </div>
+                            <div class="border-x border-white/10">
+                                <span class="block text-amber-400 font-black text-base">853</span>
+                                <span class="text-[10px] text-slate-300">Municípios MG</span>
+                            </div>
+                            <div>
+                                <span class="block text-amber-400 font-black text-base">+100k</span>
+                                <span class="text-[10px] text-slate-300">Apoiadores</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Hero Left Column: Info & Action -->
-                <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+                <div class="order-2 lg:order-1 lg:col-span-7 space-y-5 text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20">
                         <span class="bg-amber-400 text-republicanos-blue font-bold text-[10px] uppercase px-2 py-0.5 rounded">
                             Republicanos
@@ -166,58 +208,16 @@
                         </button>
                     </div>
 
-                    <!-- Quick Action CTA Buttons -->
+                    <!-- Quick Action CTA Buttons (Foco na agenda e canais) -->
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2">
-                        <a href="#grupo-whatsapp" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold px-6 py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 pulse-soft">
-                            <i class="fa-brands fa-whatsapp text-xl"></i>
-                            <span>Entrar no Grupo VIP do WhatsApp</span>
-                        </a>
-                        <a href="#agenda" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl border border-white/20 transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-calendar-days text-amber-300"></i>
+                        <a href="#agenda" class="w-full sm:w-auto bg-amber-400 hover:bg-amber-500 text-republicanos-blue font-extrabold px-6 py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calendar-days"></i>
                             <span>Ver Agenda de Visitas</span>
                         </a>
-                    </div>
-                </div>
-
-                <!-- Hero Right Column: Candidate Card Display with Supabase Photo -->
-                <div class="lg:col-span-5 flex justify-center">
-                    <div class="w-full max-w-sm bg-slate-900/85 backdrop-blur-xl rounded-3xl p-5 border border-white/20 shadow-2xl relative">
-                        <!-- Card Badge -->
-                        <div class="absolute -top-3 -right-3 bg-amber-400 text-republicanos-blue text-xs font-black uppercase px-3.5 py-1.5 rounded-full shadow-lg border border-white z-20">
-                            Líder da Maioria ALMG
-                        </div>
-
-                        <!-- Candidate Real Photo Display (Supabase Storage) -->
-                        <div class="relative w-full aspect-[4/4.6] rounded-2xl overflow-hidden bg-slate-800 border border-white/15 mb-4 group shadow-inner">
-                            <img src="https://xefvhpunadboqfibbefo.supabase.co/storage/v1/object/public/delivery-media/candidato/candidato.webp" 
-                                 alt="Deputado Estadual Carlos Henrique" 
-                                 class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105">
-                            
-                            <!-- Sleek Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/20 to-transparent pointer-events-none"></div>
-                            
-                            <div class="absolute bottom-3.5 left-4 right-4 text-left z-10">
-                                <h3 class="text-xl font-black text-white leading-tight">CARLOS HENRIQUE</h3>
-                                <p class="text-xs text-amber-400 font-bold mt-0.5">Deputado Estadual de Resultados</p>
-                                <p class="text-[11px] text-slate-300 font-mono">@carloshenrique.mg</p>
-                            </div>
-                        </div>
-
-                        <!-- Stats Strip -->
-                        <div class="grid grid-cols-3 gap-2 text-center bg-white/5 p-3 rounded-xl border border-white/10 text-xs">
-                            <div>
-                                <span class="block text-amber-400 font-black text-base">4º</span>
-                                <span class="text-[10px] text-slate-300">Mandato ALMG</span>
-                            </div>
-                            <div class="border-x border-white/10">
-                                <span class="block text-amber-400 font-black text-base">853</span>
-                                <span class="text-[10px] text-slate-300">Municípios MG</span>
-                            </div>
-                            <div>
-                                <span class="block text-amber-400 font-black text-base">+100k</span>
-                                <span class="text-[10px] text-slate-300">Apoiadores</span>
-                            </div>
-                        </div>
+                        <a href="#grupo-vip" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl border border-white/20 transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                            <span>Conhecer Grupo VIP</span>
+                        </a>
                     </div>
                 </div>
 
@@ -309,6 +309,46 @@
                 </div>
             </a>
 
+        </div>
+    </section>
+
+    <!-- Seção Exclusiva: Grupo VIP WhatsApp (Posicionada Mais Abaixo) -->
+    <section id="grupo-vip" class="py-10 max-w-6xl mx-auto px-4">
+        <div id="grupo-whatsapp" class="bg-gradient-to-br from-emerald-800 via-emerald-900 to-slate-950 rounded-3xl p-6 md:p-10 shadow-2xl text-white relative overflow-hidden border border-emerald-500/30">
+            <!-- Background glow -->
+            <div class="absolute -right-16 -bottom-16 w-80 h-80 bg-emerald-400/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute top-0 right-1/4 w-60 h-60 bg-amber-400/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-8 space-y-4 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span class="text-xs font-bold text-emerald-200 uppercase tracking-wider">Comunidade Oficial no WhatsApp</span>
+                    </div>
+
+                    <h2 class="text-2xl md:text-4xl font-black text-white leading-tight">
+                        Faça Parte do Grupo VIP do Deputado Carlos Henrique
+                    </h2>
+
+                    <p class="text-emerald-100 text-sm md:text-base max-w-2xl leading-relaxed">
+                        Receba em primeira mão os comunicados oficiais, leis aprovadas, bastidores da Assembleia Legislativa de Minas Gerais (ALMG) e os roteiros de viagens pelas cidades mineiras direto no seu celular.
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-emerald-200 pt-1">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-amber-300"></i> Notícias oficiais em 1ª mão</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-amber-300"></i> Sem spam ou correntes</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-amber-300"></i> Acesso 100% gratuito</span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4 flex flex-col items-center lg:items-end justify-center gap-3">
+                    <a href="https://chat.whatsapp.com/exemplo" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black px-8 py-4 rounded-2xl shadow-2xl transition transform hover:scale-105 flex items-center justify-center gap-3 text-center text-base pulse-soft">
+                        <i class="fa-brands fa-whatsapp text-2xl text-slate-950"></i>
+                        <span>Entrar no Grupo VIP</span>
+                    </a>
+                    <span class="text-[11px] text-emerald-200/80">Canal exclusivo administrado pela assessoria</span>
+                </div>
+            </div>
         </div>
     </section>
 
